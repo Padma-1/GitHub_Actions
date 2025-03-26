@@ -1,9 +1,9 @@
 name: build-test-deploy
 on: push
-jobs:
+jobs: 
   build:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: checkout repo
         uses: actions/checkout@v4
       - name: use node.js
@@ -16,7 +16,7 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: checkout repo
         uses: actions/checkout@v4
       - name: use node.js
@@ -28,6 +28,7 @@ jobs:
 
   deploy:
     needs: test
+
     permissions:
       contents: write
       pages: write     
@@ -59,5 +60,3 @@ jobs:
         with: 
           path: './out'
       - name: deploy
-       
-       
