@@ -1,11 +1,24 @@
 name: hello-world
+
 on:
   workflow_dispatch:
+    inputs:
+      MY_VAR:
+        description: 'Enter your variable value'
+        required: true
+
+env:
+  MY_VAR: ${{ inputs.MY_VAR }}
+
 jobs:
   hello-world-job:
     runs-on: ubuntu-latest
     steps:
-      - name: check out repository code
+      - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "Hi Padma"
-      - run: echo "$(cat hello_world.txt)"
+
+      - name: Print greeting
+        run: echo "Hi Padma"
+
+      - name: Print MY_VAR
+        run: echo "MY_VAR is $MY_VAR"
