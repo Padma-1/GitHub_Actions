@@ -6,7 +6,7 @@ on:
       MY_VAR:
         description: 'Enter your variable value'
         required: true
-        default: "hello"
+        default: hello
 
 env:
   MY_VAR: ${{ inputs.MY_VAR }}
