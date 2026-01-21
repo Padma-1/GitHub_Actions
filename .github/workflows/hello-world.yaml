@@ -7,6 +7,8 @@ on:
         description: 'Enter your variable value'
         required: true
         default: hello
+  push:
+    branches: GitHub_Actions
 
 env:
   MY_VAR: ${{ inputs.MY_VAR }}
